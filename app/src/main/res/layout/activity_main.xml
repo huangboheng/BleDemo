@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.example.rqg.bledemo.MainActivity"/>
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.rqg.bledemo.MainActivity">
+
+        <TextView
+            android:id="@+id/ble_state_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ble State:  "
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/select_ble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ble_state_info"
+            android:layout_marginTop="10dp"
+            android:onClick="@{()->activity.onClickSelect()}"
+            android:text="Select Ble"/>
+
+        <TextView
+            android:id="@+id/ble_mac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/select_ble"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/select_ble"
+            android:text="Mac: "
+            android:textColor="@color/black"/>
+
+
+        <Button
+            android:id="@+id/vibrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/select_ble"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:onClick="@{()->activity.onClickVibrate()}"
+            android:text="Vibrate"/>
+
+
+        <Button
+            android:id="@+id/read_battery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vibrate"
+
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:onClick="@{()->activity.onClickReadBattery()}"
+            android:text="Read Battery"/>
+
+        <TextView
+            android:id="@+id/batter_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/read_battery"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/read_battery"
+            android:text="Battery:"
+            android:textColor="@color/black"/>
+
+
+        <Button
+            android:id="@+id/read_sport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/read_battery"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:onClick="@{()->activity.onClickReadSport()}"
+            android:text="Read SPort"/>
+
+        <TextView
+            android:id="@+id/sport_data_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/read_sport"
+            android:layout_marginLeft="10dp"
+
+            android:layout_toRightOf="@id/read_sport"
+            android:text="Count:"/>
+
+    </RelativeLayout>
+</layout>

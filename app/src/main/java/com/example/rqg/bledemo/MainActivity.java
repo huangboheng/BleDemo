@@ -15,16 +15,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.example.rqg.bledemo.ble.BaseBleController;
-import com.example.rqg.bledemo.ble.BleManager;
-import com.example.rqg.bledemo.ble.x.BongUtil;
-import com.example.rqg.bledemo.ble.x.XBleManager;
-import com.example.rqg.bledemo.ble.x.request.XPerReadRequest;
-import com.example.rqg.bledemo.ble.x.request.XPerReadResponse;
-import com.example.rqg.bledemo.ble.x.request.XReadRequest;
-import com.example.rqg.bledemo.ble.x.request.XReadResponse;
-import com.example.rqg.bledemo.ble.x.request.XResponse;
-import com.example.rqg.bledemo.ble.x.request.XWriteRequest;
 import com.example.rqg.bledemo.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
@@ -32,6 +22,17 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
+
+import fantasy.rqg.blemodule.BaseBleController;
+import fantasy.rqg.blemodule.BleManager;
+import fantasy.rqg.blemodule.x.BongUtil;
+import fantasy.rqg.blemodule.x.XBleManager;
+import fantasy.rqg.blemodule.x.request.XPerReadRequest;
+import fantasy.rqg.blemodule.x.request.XPerReadResponse;
+import fantasy.rqg.blemodule.x.request.XReadRequest;
+import fantasy.rqg.blemodule.x.request.XReadResponse;
+import fantasy.rqg.blemodule.x.request.XResponse;
+import fantasy.rqg.blemodule.x.request.XWriteRequest;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";

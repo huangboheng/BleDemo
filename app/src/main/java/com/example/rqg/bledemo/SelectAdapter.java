@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import org.jetbrains.annotations.NotNull;
 
+import fantasy.rqg.blemodule.scan.BleDevice;
+
 /**
  * * Created by rqg on 08/11/2016.
  */

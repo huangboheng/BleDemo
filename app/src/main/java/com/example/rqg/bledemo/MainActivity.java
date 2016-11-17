@@ -65,10 +65,12 @@ public class MainActivity extends AppCompatActivity {
                 mBinding.vibrate.setEnabled(true);
                 mBinding.readBattery.setEnabled(true);
                 mBinding.readSport.setEnabled(true);
+                mBinding.toCommand.setEnabled(true);
             } else {
                 mBinding.vibrate.setEnabled(false);
                 mBinding.readBattery.setEnabled(false);
                 mBinding.readSport.setEnabled(false);
+                mBinding.toCommand.setEnabled(false);
             }
         }
     };
@@ -292,5 +294,20 @@ public class MainActivity extends AppCompatActivity {
                 (hour > 0xf ? "" : "0") + Integer.toHexString(hour) +
                 (minute > 0xf ? "" : "0") + Integer.toHexString(minute);
     }
+
+
+    public void toCommandPage() {
+
+        if (mBleManger == null)
+            return;
+
+        MemoryCache.sBleManager = mBleManger;
+        Intent intent = new Intent(this, CommandActivity.class);
+
+        startActivity(intent);
+
+
+    }
+
 
 }

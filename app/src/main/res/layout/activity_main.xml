@@ -101,5 +101,16 @@
             android:layout_toRightOf="@id/read_sport"
             android:text="Count:"/>
 
+
+        <Button
+            android:id="@+id/to_command"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/read_sport"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:onClick="@{()->activity.toCommandPage()}"
+            android:text="To Command Page"/>
+
     </RelativeLayout>
 </layout>

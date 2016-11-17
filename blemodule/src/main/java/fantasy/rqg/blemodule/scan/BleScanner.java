@@ -116,7 +116,7 @@ public class BleScanner {
 
 
     public void stopLeScan() {
-        mCallback = null;
+
 
         BluetoothAdapter defaultAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -129,5 +129,7 @@ public class BleScanner {
         } else {
             defaultAdapter.stopLeScan(mLeScanCallback);
         }
+
+
     }
 }

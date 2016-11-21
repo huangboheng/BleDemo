@@ -43,8 +43,87 @@
             android:onClick="readBattery"
             android:text="Read Battery"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="sendIncoming"
+            android:text="Send Incoming"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="cancelIncoming"
+            android:text="Cancel Incoming"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="sendMissIncoming"
+            android:text="Send Miss Incoming"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="sendAppMsg"
+            android:text="Send App Msg"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="cancelAppMsg"
+            android:text="Cancel App Msg"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="sendSMS"
+            android:text="Send SMS"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Call"/>
+
+            <CheckBox
+                android:id="@+id/cb_sms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sms"/>
+
+            <CheckBox
+                android:id="@+id/cb_qq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QQ"/>
+
+            <CheckBox
+                android:id="@+id/cb_wechat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wechat"/>
 
 
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="setNotifyEnable"
+            android:text="Set Notify Enable"/>
     </LinearLayout>
 
 

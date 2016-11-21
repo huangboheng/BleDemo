@@ -1,8 +1,6 @@
 package fantasy.rqg.sdk;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,14 +11,17 @@ import fantasy.rqg.blemodule.x.request.XPerReadResponse;
 import fantasy.rqg.blemodule.x.request.XResponse;
 import fantasy.rqg.blemodule.x.request.XWriteRequest;
 import fantasy.rqg.sdk.command.BatteryCallback;
+import fantasy.rqg.sdk.util.Bong3HRNotifyHandler;
 import fantasy.rqg.sdk.util.BongCoder;
+import fantasy.rqg.sdk.util.INotifyHandler;
 
 /**
  * Created by rqg on 17/11/2016.
  */
 
-public class BongCommandHelper {
+public class BongCommandHelper implements INotifyHandler {
     private BleManager mBleManager;
+    private INotifyHandler mNotifyHandlerImpl;
 
     public BongCommandHelper(@NonNull BleManager bleManager) {
         mBleManager = bleManager;
@@ -102,5 +103,79 @@ public class BongCommandHelper {
     }
 
 
+    private INotifyHandler getNotifyHandler() {
+        if (mNotifyHandlerImpl == null) {
+            synchronized (this) {
+                if (mNotifyHandlerImpl == null)
+                    mNotifyHandlerImpl = new Bong3HRNotifyHandler(mBleManager);
+            }
+        }
 
+        return mNotifyHandlerImpl;
+
+    }
+
+
+    @Override
+    public void sendAddIncomingCallNotify(String name, String number, ResultCallback callback) {
+        getNotifyHandler().sendAddIncomingCallNotify(name, number, callback);
+    }
+
+    @Override
+    public void sendAddMissCallNotify(String name, String number, ResultCallback callback) {
+        getNotifyHandler().sendAddMissCallNotify(name, number, callback);
+    }
+
+    @Override
+    public void sendDelIncomingCallNotify(String name, String number, ResultCallback callback) {
+        getNotifyHandler().sendDelIncomingCallNotify(name, number, callback);
+    }
+
+    @Override
+    public void sendAddAppMsg(String appName, String msg, int msgId, int appId, ResultCallback callback) {
+        getNotifyHandler().sendAddAppMsg(appName, msg, msgId, appId, callback);
+    }
+
+    @Override
+    public void sendDelAppMsg(int msgId, int appId, ResultCallback callback) {
+        getNotifyHandler().sendDelAppMsg(msgId, appId, callback);
+    }
+
+    @Override
+    public void sendAddSms(String name, String msg, int msgId, ResultCallback callback) {
+        getNotifyHandler().sendAddSms(name, msg, msgId, callback);
+    }
+
+    /**
+     * 设置消息提醒开关
+     *
+     * @param call     enable true , otherwise false
+     * @param sms      enable true , otherwise false
+     * @param qq       enable true , otherwise false
+     * @param wechat   enable true , otherwise false
+     * @param callback enable true , otherwise false
+     */
+    public void setMessageNotifyEnable(boolean call, boolean sms, boolean qq, boolean wechat, final ResultCallback callback) {
+        byte[] cmd = BongCoder.encodeAppMsgSwitch(call, wechat, qq, sms);
+
+        mBleManager.addRequest(new XPerReadRequest(
+                cmd,
+                new XPerReadResponse() {
+                    @Override
+                    public void onReceive(byte[] rsp) {
+                        callback.finished();
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        callback.onError(e);
+                    }
+
+                    @Override
+                    public void onCommandSuccess() {
+
+                    }
+                }
+        ));
+    }
 }

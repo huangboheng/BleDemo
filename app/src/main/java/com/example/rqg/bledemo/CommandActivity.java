@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -14,6 +15,7 @@ import cn.ginshell.sdk.model.BongBlock;
 import fantasy.rqg.blemodule.BleManager;
 import fantasy.rqg.sdk.BongCommandHelper;
 import fantasy.rqg.sdk.ResultCallback;
+import fantasy.rqg.sdk.ResultCallbackImpl;
 import fantasy.rqg.sdk.command.BatteryCallback;
 
 /**
@@ -105,5 +107,39 @@ public class CommandActivity extends AppCompatActivity {
         });
     }
 
-    
+
+    public void sendIncoming(View view) {
+        mBongCommandHelper.sendAddIncomingCallNotify("Name", "1313131231231", new ResultCallbackImpl());
+    }
+
+
+    public void cancelIncoming(View view) {
+        mBongCommandHelper.sendDelIncomingCallNotify("Name", "1313131231231", new ResultCallbackImpl());
+    }
+
+    public void sendMissIncoming(View view) {
+        mBongCommandHelper.sendAddMissCallNotify("MissedCall", "123123132123", new ResultCallbackImpl());
+    }
+
+    public void sendAppMsg(View view) {
+        mBongCommandHelper.sendAddAppMsg("TestApp", "Message From App Test", 31231211, 12312, new ResultCallbackImpl());
+    }
+
+    public void cancelAppMsg(View view) {
+        mBongCommandHelper.sendDelAppMsg(31231211, 12312, new ResultCallbackImpl());
+    }
+
+    public void sendSMS(View view) {
+        mBongCommandHelper.sendAddSms("NDY", "SMS for test", 123, new ResultCallbackImpl());
+    }
+
+    public void setNotifyEnable(View view) {
+        CheckBox cbCall = (CheckBox) findViewById(R.id.cb_call);
+        CheckBox cbSMS = (CheckBox) findViewById(R.id.cb_sms);
+        CheckBox cbQQ = (CheckBox) findViewById(R.id.cb_qq);
+        CheckBox cbwechat = (CheckBox) findViewById(R.id.cb_wechat);
+
+
+        mBongCommandHelper.setMessageNotifyEnable(cbCall.isChecked(), cbSMS.isChecked(), cbQQ.isChecked(), cbwechat.isChecked(), new ResultCallbackImpl());
+    }
 }

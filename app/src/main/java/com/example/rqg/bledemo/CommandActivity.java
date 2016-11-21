@@ -121,11 +121,15 @@ public class CommandActivity extends AppCompatActivity {
         mBongCommandHelper.sendAddMissCallNotify("MissedCall", "123123132123", new ResultCallbackImpl());
     }
 
-    public void sendAppMsg(View view) {
-        mBongCommandHelper.sendAddAppMsg("TestApp", "Message From App Test", 31231211, 12312, new ResultCallbackImpl());
+    public void sendQQMsg(View view) {
+        mBongCommandHelper.sendAddAppMsg("QQ", "QQ Message From App Test", 31231211, 12312, new ResultCallbackImpl());
     }
 
-    public void cancelAppMsg(View view) {
+    public void sendWechatMsg(View view) {
+        mBongCommandHelper.sendAddAppMsg("微信"/*or WeChat*/, "WeChat Message From App Test", 31231211, 12312, new ResultCallbackImpl());
+    }
+
+    public void cancelWechatMsg(View view) {
         mBongCommandHelper.sendDelAppMsg(31231211, 12312, new ResultCallbackImpl());
     }
 
@@ -142,4 +146,8 @@ public class CommandActivity extends AppCompatActivity {
 
         mBongCommandHelper.setMessageNotifyEnable(cbCall.isChecked(), cbSMS.isChecked(), cbQQ.isChecked(), cbwechat.isChecked(), new ResultCallbackImpl());
     }
+
+
+
+
 }

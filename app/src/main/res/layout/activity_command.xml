@@ -68,15 +68,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:onClick="sendAppMsg"
-            android:text="Send App Msg"/>
+            android:onClick="sendQQMsg"
+            android:text="Send QQ Msg"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:onClick="cancelAppMsg"
-            android:text="Cancel App Msg"/>
+            android:onClick="sendWechatMsg"
+            android:text="Send Wechat Msg"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="cancelWechatMsg"
+            android:text="Cancel Wechat Msg"/>
 
         <Button
             android:layout_width="wrap_content"

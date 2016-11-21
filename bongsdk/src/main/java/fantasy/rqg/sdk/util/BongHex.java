@@ -1,4 +1,4 @@
-package fantasy.rqg.sdk.command;
+package fantasy.rqg.sdk.util;
 
 /**
  * SN : SN：2700000011

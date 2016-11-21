@@ -9,7 +9,16 @@ package fantasy.rqg.sdk;
 
 public interface ResultCallback {
 
+    /**
+     * all step finished
+     */
     void finished();
 
+
+    /**
+     * something goes wrong
+     *
+     * @param t wrong reason
+     */
     void onError(Throwable t);
 }

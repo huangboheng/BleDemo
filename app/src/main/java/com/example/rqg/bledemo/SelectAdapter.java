@@ -1,12 +1,12 @@
 package com.example.rqg.bledemo;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.jetbrains.annotations.NotNull;
 
 import fantasy.rqg.blemodule.scan.BleDevice;
 
@@ -19,7 +19,7 @@ public class SelectAdapter extends RecyclerView.Adapter<SelectAdapter.BleViewHol
     private BleDevice[] mBleDevices;
     private OnBleClickListener mOnBleClickListener;
 
-    public SelectAdapter(@NotNull OnBleClickListener onBleClickListener) {
+    public SelectAdapter(@NonNull OnBleClickListener onBleClickListener) {
         mOnBleClickListener = onBleClickListener;
     }
 

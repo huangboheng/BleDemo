@@ -1,4 +1,4 @@
-package fantasy.rqg.sdk.command;
+package fantasy.rqg.sdk.util;
 
 
 import android.util.Log;

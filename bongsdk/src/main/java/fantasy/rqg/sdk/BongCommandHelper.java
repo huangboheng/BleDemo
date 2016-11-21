@@ -8,9 +8,12 @@ import java.util.concurrent.TimeUnit;
 
 import cn.ginshell.sdk.BongSdk;
 import fantasy.rqg.blemodule.BleManager;
+import fantasy.rqg.blemodule.x.request.XPerReadRequest;
+import fantasy.rqg.blemodule.x.request.XPerReadResponse;
 import fantasy.rqg.blemodule.x.request.XResponse;
 import fantasy.rqg.blemodule.x.request.XWriteRequest;
-import fantasy.rqg.sdk.command.BongCoder;
+import fantasy.rqg.sdk.command.BatteryCallback;
+import fantasy.rqg.sdk.util.BongCoder;
 
 /**
  * Created by rqg on 17/11/2016.
@@ -64,5 +67,40 @@ public class BongCommandHelper {
                 }
         ));
     }
+
+
+    public void readBattery(final BatteryCallback callback) {
+        mBleManager.addRequest(new XPerReadRequest(
+                BongCoder.encodeReadBattery()
+                , new XPerReadResponse() {
+            @Override
+            public void onReceive(byte[] rsp) {
+                int bu;
+                if (rsp != null && rsp.length > 10) {
+                    bu = (rsp[10] & 0x000000ff);
+
+                } else {
+                    bu = -1;
+                }
+
+                callback.onReadBatter(bu);
+
+                callback.finished();
+            }
+
+            @Override
+            public void onError(Exception e) {
+                callback.onError(e);
+            }
+
+            @Override
+            public void onCommandSuccess() {
+
+            }
+        }));
+
+    }
+
+
 
 }

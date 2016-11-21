@@ -14,6 +14,7 @@ import cn.ginshell.sdk.model.BongBlock;
 import fantasy.rqg.blemodule.BleManager;
 import fantasy.rqg.sdk.BongCommandHelper;
 import fantasy.rqg.sdk.ResultCallback;
+import fantasy.rqg.sdk.command.BatteryCallback;
 
 /**
  * Created by rqg on 17/11/2016.
@@ -84,4 +85,25 @@ public class CommandActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void readBattery(View view) {
+        mBongCommandHelper.readBattery(new BatteryCallback() {
+            @Override
+            public void onReadBatter(int remain) {
+                Log.d(TAG, "onReadBatter() called with: remain = [" + remain + "]");
+            }
+
+            @Override
+            public void finished() {
+
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                Log.e(TAG, "onError: ", t);
+            }
+        });
+    }
+
+    
 }

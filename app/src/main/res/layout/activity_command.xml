@@ -35,6 +35,13 @@
             android:onClick="vibrate"
             android:text="Vibrate"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="syncTime"
+            android:text="Sync Time"/>
+
 
         <Button
             android:layout_width="wrap_content"

@@ -178,4 +178,26 @@ public class BongCommandHelper implements INotifyHandler {
                 }
         ));
     }
+
+    /**
+     * 同步当前时间和时区到 bong 手环
+     */
+    public void syncBongTime(final ResultCallback callback) {
+        byte[] cmd = BongCoder.encodeTimeSync();
+
+        mBleManager.addRequest(new XWriteRequest(
+                cmd,
+                new XResponse() {
+                    @Override
+                    public void onError(Exception e) {
+                        callback.onError(e);
+                    }
+
+                    @Override
+                    public void onCommandSuccess() {
+                        callback.finished();
+                    }
+                }
+        ));
+    }
 }

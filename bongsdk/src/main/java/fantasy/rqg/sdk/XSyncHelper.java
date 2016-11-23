@@ -116,7 +116,7 @@ public class XSyncHelper {
     }
 
     private void handle2sRsp(final List<byte[]> sportList, final List<byte[]> heartList, final long mStartTime, final long mEndTime) {
-        Log.d(TAG, "handle2sRsp() called with: sportList = [" + sportList + "], heartList = [" + heartList + "], mStartTime = [" + mStartTime + "], mEndTime = [" + mEndTime + "]");
+        Log.d(TAG, "handle2sRsp() called with: sportList = [" + sportList.size() + "], heartList = [" + heartList.size() + "], mStartTime = [" + mStartTime + "], mEndTime = [" + mEndTime + "]");
 
         Observable.just(null)
                 .subscribeOn(Schedulers.computation())

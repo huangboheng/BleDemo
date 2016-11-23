@@ -7,11 +7,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import cn.ginshell.sdk.BongSdk;
+import cn.ginshell.sdk.db.DBCurve;
+import cn.ginshell.sdk.db.DBHeart;
 import cn.ginshell.sdk.model.BongBlock;
+import cn.ginshell.sdk.pm.LogUtil;
 import fantasy.rqg.blemodule.BleManager;
 import fantasy.rqg.sdk.BongCommandHelper;
 import fantasy.rqg.sdk.ResultCallback;
@@ -58,11 +62,27 @@ public class CommandActivity extends AppCompatActivity {
 
                 List<BongBlock> bongBlockByTime = BongSdk.getBongBlockByTime(start, end);
 
+                List<DBCurve> curveByTime = BongSdk.getCurveByTime(start, end);
+
+                List<DBHeart> heartByTime = BongSdk.getHeartByTime(start, end);
+
                 Log.d(TAG, "finished: " + bongBlockByTime.size());
 
                 for (BongBlock bb : bongBlockByTime) {
                     Log.d(TAG, bb.toString());
                 }
+
+                Log.i(TAG, "curve");
+                for (DBCurve dc : curveByTime) {
+                    Log.d(TAG, LogUtil.formatCurve(dc));
+                }
+
+                Log.i(TAG, "heart rate");
+                for (DBHeart dh : heartByTime) {
+                    Log.d(TAG, "" + new Date(dh.getTimestamp() * 1000) + "  " + dh.getHeart() + "  " + dh.getManual());
+
+                }
+
 
             }
 
@@ -148,6 +168,7 @@ public class CommandActivity extends AppCompatActivity {
     }
 
 
-
-
+    public void syncTime(View view) {
+        mBongCommandHelper.syncBongTime(new ResultCallbackImpl());
+    }
 }

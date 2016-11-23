@@ -4,8 +4,11 @@ import android.util.Log;
 
 /**
  * Created by rqg on 21/11/2016.
+ *
+ * 此类为了打印方便，请勿使用
  */
 
+@Deprecated
 public class ResultCallbackImpl implements ResultCallback {
     private static final String TAG = "ResultCallbackImpl";
 

@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">BleDemo</string>
+    <string name="screen_horizontal">横屏</string>
+    <string name="screen_vertical">竖屏</string>
+    <string name="screen_arrange">选择内容排版方式</string>
+    <string name="screen_switch">选择内容切换方式</string>
+    <string name="switch_style">控制方式</string>
+    <string name="screen_manual">手势</string>
+    <string name="screen_auto">自动</string>
+
+
+    <string name="bong_3_me">我的bong 3心率版</string>
+    <string name="bind_3_is_shock">设备是否被点亮 ?</string>
+    <string name="screen_display">显示与控制</string>
+    <string name="qq">QQ</string>
+    <string name="sms">短信</string>
+    <string name="arrange_style">显示方式</string>
+    <string name="set_fialure">设置失败</string>
+
+    <string name="highlight">亮度调节</string>
+    <string name="screen_normal">常规</string>
+    <string name="screen_highlight">高亮</string>
+
+    <string name="set_left_hand">左手</string>
+    <string name="set_right_hand">右手</string>
+
+    <string name="bong_2s_smart_heart">自动心率监测</string>
+    <string name="card_set_no_disturb">勿扰模式</string>
+
+
+    <string name="sport_steps">步数</string>
+    <string name="distance">距离</string>
+    <string name="calorie">卡路里</string>
+    <string name="weather_title">天气</string>
+    <string name="show_weather">显示天气</string>
+
+    <string name="bong_2s_sit_remind">活动提醒</string>
+    <string name="card_set_wear_choose">佩戴位置</string>
+    <string name="card_set_open_course">新手引导</string>
+    <string name="card_open_course_tip">打开中</string>
+    <string name="card_open_course_fail">连接设备失败</string>
+    <string name="card_open_course_success">打开成功</string>
+    <string name="card_set_choose_left">左手</string>
+    <string name="card_set_choose_right">右手</string>
+    <string name="heart_rate">心率</string>
 </resources>

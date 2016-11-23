@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/main_content"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:animateLayoutChanges="true"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/content_arrange_pan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white_c"/>
+
+
+        <RelativeLayout
+            style="@style/SetItem"
+            android:background="@drawable/selector_btn_white"
+            android:clickable="true">
+
+
+            <TextView
+                style="@style/CommonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:text="@string/arrange_style"/>
+
+            <com.rqg.common.view.SideView
+                android:id="@+id/sideview_arrange"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                app:focusColor="@color/green_1"
+                app:leftText="@string/screen_horizontal"
+                app:radius="2dp"
+                app:rightText="@string/screen_vertical"
+                app:strokeWidth="1dp"
+                app:textPaddingHorizontal="6dp"
+                app:textPaddingVertical="6dp"
+                app:textSize="15dp"
+                app:unfocusColor="@color/white"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/hand_pan"
+            style="@style/SetItem"
+            android:background="@drawable/selector_btn_white"
+            android:clickable="true">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="15dp"
+                android:background="@color/white_c"/>
+
+            <TextView
+                style="@style/CommonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:text="@string/card_set_wear_choose"/>
+
+            <com.rqg.common.view.SideView
+                android:id="@+id/sideview_hand"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                app:focusColor="@color/green_1"
+                app:leftText="@string/set_left_hand"
+                app:radius="2dp"
+                app:rightText="@string/set_right_hand"
+                app:strokeWidth="1dp"
+                app:textPaddingHorizontal="6dp"
+                app:textPaddingVertical="6dp"
+                app:textSize="15dp"
+                app:unfocusColor="@color/white"/>
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white_c"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white_c"/>
+
+
+        <RelativeLayout
+            style="@style/SetItem"
+            android:background="@drawable/selector_btn_white"
+            android:clickable="true">
+
+
+            <TextView
+                style="@style/CommonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:text="@string/switch_style"/>
+
+            <com.rqg.common.view.SideView
+                android:id="@+id/sideview_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                app:focusColor="@color/green_1"
+                app:leftText="@string/screen_manual"
+                app:radius="2dp"
+                app:rightText="@string/screen_auto"
+                app:strokeWidth="1dp"
+                app:textPaddingHorizontal="6dp"
+                app:textPaddingVertical="6dp"
+                app:textSize="15dp"
+                app:unfocusColor="@color/white"/>
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white_c"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white_c"/>
+
+
+        <RelativeLayout
+            style="@style/SetItem"
+            android:background="@drawable/selector_btn_white"
+            android:clickable="true">
+
+
+            <TextView
+                style="@style/CommonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:text="@string/highlight"/>
+
+            <com.rqg.common.view.SideView
+                android:id="@+id/sideview_highlight"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                app:focusColor="@color/green_1"
+                app:leftText="@string/screen_normal"
+                app:radius="2dp"
+                app:rightText="@string/screen_highlight"
+                app:strokeWidth="1dp"
+                app:textPaddingHorizontal="6dp"
+                app:textPaddingVertical="6dp"
+                app:textSize="15dp"
+                app:unfocusColor="@color/white"/>
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white_c"/>
+    </LinearLayout>
+
+</merge>

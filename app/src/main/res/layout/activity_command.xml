@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
 
 
         <TextView
@@ -25,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="syncAndLogBlock"
-            android:text="Sync Sport Log Block"/>
+            android:text="同步并打印Block"/>
 
 
         <Button
@@ -33,14 +34,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="vibrate"
-            android:text="Vibrate"/>
+            android:text="震动"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="syncTime"
-            android:text="Sync Time"/>
+            android:text="同步时间"/>
 
 
         <Button
@@ -48,56 +49,56 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="readBattery"
-            android:text="Read Battery"/>
+            android:text="读取电量"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="sendIncoming"
-            android:text="Send Incoming"/>
+            android:text="发送来电提醒"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="cancelIncoming"
-            android:text="Cancel Incoming"/>
+            android:text="取消来电提醒"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="sendMissIncoming"
-            android:text="Send Miss Incoming"/>
+            android:text="发送未接来电"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="sendQQMsg"
-            android:text="Send QQ Msg"/>
+            android:text="发送QQ消息"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="sendWechatMsg"
-            android:text="Send Wechat Msg"/>
+            android:text="发送微信消息"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="cancelWechatMsg"
-            android:text="Cancel Wechat Msg"/>
+            android:text="取消微信消息"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="sendSMS"
-            android:text="Send SMS"/>
+            android:text="发送短信"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -129,15 +130,113 @@
                 android:layout_height="wrap_content"
                 android:text="Wechat"/>
 
-
         </LinearLayout>
+
+
+        <include
+            layout="@layout/fragment_screen"/>
+
+
+        <!--智能心率监测-->
+        <RelativeLayout
+
+            style="@style/SetItem.Padding"
+            android:layout_marginTop="10dp"
+            android:clickable="false">
+
+
+            <TextView
+                style="@style/CommonText.ItemBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/bong_2s_smart_heart"/>
+
+            <Switch
+                android:id="@+id/sb_smart_heart"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="16dp"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            style="@style/SetItem.Padding"
+            android:background="@color/white"
+            android:clickable="true">
+
+
+            <TextView
+                style="@style/CommonText.ItemBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/card_set_no_disturb"/>
+
+            <Switch
+                android:id="@+id/no_disturb_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="16dp"/>
+        </RelativeLayout>
+
+
+        <!--久坐提醒-->
+        <RelativeLayout
+            android:id="@+id/rl_sit_remind"
+            style="@style/SetItem.Padding"
+            android:clickable="false">
+
+
+            <TextView
+                style="@style/CommonText.ItemBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/bong_2s_sit_remind"/>
+
+            <Switch
+                android:id="@+id/sb_sit_remind"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="16dp"/>
+        </RelativeLayout>
+
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:onClick="setNotifyEnable"
-            android:text="Set Notify Enable"/>
+            android:onClick="setAlarms"
+            android:text="设置闹钟"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="restartBong"
+            android:text="重启"/>
+
+
+        <include
+            layout="@layout/fragment_content"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="sendWeatherInfo"
+            android:text="发送天气信息"/>
+
+
     </LinearLayout>
 
 

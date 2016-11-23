@@ -124,13 +124,8 @@ public class BongCoder {
         return BongUtil.hexStringToBytes(string);
     }
 
-    public static byte[] encodeBong3Screen(ContentConfigModel contentConfig) {
+    public static byte[] encodeBong3Screen(boolean step, boolean distance, boolean cal, boolean weather, boolean heart) {
 
-        boolean step = contentConfig.isShowStep();
-        boolean distance = contentConfig.isShowDistance();
-        boolean cal = contentConfig.isShowCal();
-        boolean weather = contentConfig.getWeather().isShowWeather();
-        boolean heart = contentConfig.isShowHeart();
 
         String string = String.format(Locale.ENGLISH, "290000001A%02X%02X%02X%02X%02X"
                 , step ? 1 : 0
@@ -208,6 +203,11 @@ public class BongCoder {
         return BongUtil.hexStringToBytes(encodeTimeSyncString());
     }
 
+
+    public static byte[] encodeSmartHeart(boolean open) {
+        return BongUtil.hexStringToBytes(encode2sHeartSwitch(open));
+    }
+
     /**
      * 写时间
      */
@@ -241,7 +241,7 @@ public class BongCoder {
     }
 
     /**
-     * AlaramSettings 属性如下
+     * AlarmSettings 属性如下
      * private boolean isOn; 是否开启闹钟
      * private int index; 闹钟id
      * private int remindBefore; 浅睡眠提醒 (分钟)
@@ -258,12 +258,12 @@ public class BongCoder {
      * @param list
      * @return
      */
-    public static String encodeAlaramListString(List<AlaramSettings> list) {
+    public static String encodeAlaramListString(List<AlarmSettings> list) {
         // 写闹钟
         StringBuilder data = new StringBuilder();
         data.append("23");
         // 0~30min 转化为 0~F(*2)
-        for (AlaramSettings cs : list) {
+        for (AlarmSettings cs : list) {
             String remind_time_1 = Integer.toHexString((cs.getRemindBefore() + 1) / 2);
             data.append(remind_time_1);
         }
@@ -273,7 +273,7 @@ public class BongCoder {
         }
 
         //闹钟的重复日期
-        for (AlaramSettings settings : list) {
+        for (AlarmSettings settings : list) {
             StringBuilder binary_data = new StringBuilder();
             if (settings.isOn()) {
                 //懒人模式

@@ -8,4 +8,27 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="CommonText">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--通用的item-->
+    <style name="SetItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">46dp</item>
+    </style>
+
+    <style name="CommonText.ItemBlack" parent="CommonText">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="SetItem.Padding">
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+    </style>
 </resources>

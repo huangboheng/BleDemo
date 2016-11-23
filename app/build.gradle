@@ -36,4 +36,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     compile project(path: ':bongsdk')
+
+    compile 'cn.bong.android:android-common:1.1.6'
+
 }

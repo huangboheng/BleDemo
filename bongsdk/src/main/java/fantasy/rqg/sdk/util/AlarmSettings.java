@@ -9,9 +9,26 @@ import java.util.Locale;
 
 /**
  * Created by tongwanglin on 13-11-23.
+ * <p>
+ * <p>
+ * <p>
+ * //          * AlarmSettings 属性如下
+ * //     * private boolean isOn; 是否开启闹钟
+ * //                * private int index; 闹钟id 1-5
+ * //                * private int remindBefore; 浅睡眠提醒 (分钟)
+ * //                * private Integer time;  闹钟时间 (分钟)
+ * //                * private boolean day1On; 周一到周日 是否开 true - > 开 false -> 关
+ * //                * private boolean day2On;
+ * //                * private boolean day3On;
+ * //                * private boolean day4On;
+ * //                * private boolean day5On;
+ * //                * private boolean day6On;
+ * //                * private boolean day7On;
+ * //                * private int lazyMode;//0：关闭 1:开启 懒人模式 (2s 设置无意义,但这个字段需要)
  */
-public class AlaramSettings {
-    private static final String TAG = AlaramSettings.class.getSimpleName();
+public class AlarmSettings {
+    private static final String TAG = "AlarmSettings";
+
     public boolean isSelected;
     private boolean isOn;
     private int index;
@@ -31,10 +48,10 @@ public class AlaramSettings {
 
     private String name;
 
-    public AlaramSettings() {
+    public AlarmSettings() {
     }
 
-    public AlaramSettings(AlaramSettings cs) {
+    public AlarmSettings(AlarmSettings cs) {
         this.isSelected = cs.isSelected();
         this.isOn = cs.isOn();
         this.index = cs.getIndex();

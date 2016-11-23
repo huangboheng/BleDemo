@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/item_margin_height"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/white_c"/>
+
+    <RelativeLayout
+        style="@style/SetItem.Padding"
+        android:clickable="false">
+
+
+        <TextView
+            style="@style/CommonText.ItemBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/sport_steps"/>
+
+        <Switch
+            android:id="@+id/step_switch"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="16dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white_c"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        style="@style/SetItem.Padding"
+        android:clickable="false">
+
+
+        <TextView
+            style="@style/CommonText.ItemBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/distance"/>
+
+        <Switch
+            android:id="@+id/distance_switch"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="16dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white_c"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        style="@style/SetItem.Padding"
+        android:clickable="false">
+
+
+        <TextView
+            style="@style/CommonText.ItemBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/calorie"/>
+
+        <Switch
+            android:id="@+id/cal_switch"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="16dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white_c"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/SetItem.Padding"
+        android:clickable="false">
+
+
+        <TextView
+            style="@style/CommonText.ItemBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/heart_rate"/>
+
+        <Switch
+            android:id="@+id/heart_switch"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="16dp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/white_c"/>
+
+
+    <RelativeLayout
+        style="@style/SetItem.Padding"
+        android:clickable="false">
+
+        <TextView
+            style="@style/CommonText.ItemBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/show_weather"/>
+
+        <Switch
+            android:id="@+id/show_weather_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="16dp"/>
+    </RelativeLayout>
+</LinearLayout>
+

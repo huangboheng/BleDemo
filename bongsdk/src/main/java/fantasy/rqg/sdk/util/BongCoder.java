@@ -17,7 +17,7 @@ import fantasy.rqg.sdk.BuildConfig;
  * 和bong通信
  */
 public class BongCoder {
-    private static final String TAG = BongCoder.class.getSimpleName();
+    private static final String TAG = "BongCoder";
 
     /**
      * *************************************
@@ -74,7 +74,6 @@ public class BongCoder {
         String format = String.format(Locale.ENGLISH, "2900000020%02X", l);
 
         return BongUtil.hexStringToBytes(format);
-
     }
 
 

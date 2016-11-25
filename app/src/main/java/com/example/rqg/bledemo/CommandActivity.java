@@ -169,6 +169,7 @@ public class CommandActivity extends AppCompatActivity {
      */
     public void syncAndLogBlock(View view) {
 
+
         mBongCommandHelper.syncDataFromBong(new ResultCallback() {
             @Override
             public void finished() {

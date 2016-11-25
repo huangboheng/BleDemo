@@ -162,14 +162,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 示例
+     * <p>
+     * 写入一次不接收数据（会接收蓝牙协议确认信号）
+     * <p>
+     * 注意此处用的是 {@link XWriteRequest} And {@link XResponse}
+     */
     public void onClickVibrate() {
-        //only write once
 
 
         String format = encodeVibrateString(5);
 
         byte[] bytes = BongUtil.hexStringToBytes(format);
-
         mBleManger.addRequest(new XWriteRequest(bytes, new XResponse() {
             @Override
             public void onError(Exception e) {
@@ -200,6 +205,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * 示例
+     * <p>
+     * 写入一次接收一次
+     * <p>
+     * 注意此处用的是 {@link XPerReadRequest} And {@link XPerReadResponse}
+     */
     public void onClickReadBattery() {
         //write once and read once
 
@@ -231,6 +243,14 @@ public class MainActivity extends AppCompatActivity {
 
     private int count = 0;
 
+
+    /**
+     * 示例
+     * <p>
+     * 写入一次接收多次
+     * <p>
+     * 注意此处用的是 {@link XReadRequest} And {@link XReadResponse}
+     */
     public void onClickReadSport() {
 
         //write once and read multi times until receive "end" or "success"
@@ -239,6 +259,7 @@ public class MainActivity extends AppCompatActivity {
 
         long beginTime = endtime - TimeUnit.HOURS.toMillis(3);
 
+        //命令拼接
         String s = "2000000013" + getStrTimeForHex(beginTime) + getStrTimeForHex(endtime);
 
         byte[] bytes = BongUtil.hexStringToBytes(s);
